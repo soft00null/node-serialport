@@ -171,7 +171,8 @@ public:
 };
 
 void EIO_Update(uv_work_t* req) {
-  // TODO always error or do an update
+  OpenBaton* data = static_cast<OpenBaton*>(req->data);
+  _snprintf(data->errorString, sizeof(data->errorString), "Update is not yet implemented on windows");
 }
 
 void EIO_Set(uv_work_t* req) {
